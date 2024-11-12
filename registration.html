@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWeb</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="css/style.css">
+  
+     <link rel="stylesheet" href="css/responsive.css">
+ 
+    <style>
+ .gradient-custom-3 {
+
+background: #84fab0;
+
+
+background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+}
+.gradient-custom-4 {
+
+background: #84fab0;
+
+background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+
+
+background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+}
+        </style>
+</head>
+<body>
+    <header>
+        
+        <div class="header">
+           <div class="header_white_section">
+              <div class="container-fluid">
+                 <div class="row">
+                    <div class="col-md-12">
+                       <div class="header_information">
+                          <ul>
+                             <li><img src="images/1.png" alt="#"/> Mathura, Uttar Pradesh</li>
+                             <li><img src="images/2.png" alt="#"/> +91 9845642312  </li>
+                             <li><img src="images/3.png" alt="#"/> StarWeb100@gmail.com</li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="container">
+              <div class="row">
+                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                       <div class="center-desk">
+                          <div class="logo"> <a href="index.html"><img src="images/logo1.png" alt="#"></a> </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                       <div class="limit-box">
+                          <nav class="main-menu">
+                             <ul class="menu-area-main">
+                                <li class="active"> <a href="index.html">Home</a> </li>
+                                <li> <a href="about.html">About</a> </li>
+                                <li><a href="course.html">Courses</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                             </ul>
+                          </nav>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+       
+     </header>
+   
+     <section class="vh-100 bg-image"
+     style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+       <div class="container h-100">
+         <div class="row d-flex justify-content-center align-items-center h-100">
+           <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+             <div class="card" style="border-radius: 15px;">
+               <div class="card-body p-5">
+                 <h2 class="text-uppercase text-center mb-5">Registration</h2>
+   
+                 <form action="server.php" method="post" onsubmit="submitForm(); return false;" name="google-sheet">
+   
+                   <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                     <input type="text"  name="name" class="form-control form-control-lg" required/>
+                     
+                   </div>
+   
+                   <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                     <input type="email" name="email" id="form3Example3cg" class="form-control form-control-lg" required />
+                     
+                   </div>
+   
+                   <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example4cg">Mobile No.</label>
+                     <input type="number" name="mobileno" id="form3Example4cg" class="form-control form-control-lg"  required/>
+                     
+                   </div>
+   
+                   <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example4cdg">Location</label>
+                     <input type="text" name="location" id="form3Example4cdg" class="form-control form-control-lg"  required/>
+                    
+                   </div>
+
+                   <div data-mdb-input-init class="form-outline mb-4">
+                    <label class="form-label" for="form3Example4cdg">Price</label>
+                     <input type="number" name="price" id="form3Example4cdg" class="form-control form-control-lg" value="99" readonly/>
+                    
+                   </div>
+   
+                   <div class="form-check d-flex justify-content-center mb-5">
+                   
+                   </div>
+   
+                   <div class="d-flex justify-content-center">
+                     <button id="btn-pay" type="submit" name="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" onclick="return validateForm(); resetForm();">Register</button>
+                   </div>
+
+ 
+                 </form>
+   
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxgezAWiL2cXu8UlpNs-iOTieJ_5LDjFC9k33bGenhCW60w9yG1u_jvBl5bOgGjImed/exec'
+      const form = document.forms['google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+          .catch(error => console.error('Error!', error.message))
+          window.location.href = "https://rzp.io/l/1M5l7fpyO";
+      })
+    </script>
+    <script>
+      function validateForm() {
+        var name = document.forms["google-sheet"]["name"].value;
+        var email = document.forms["google-sheet"]["email"].value;
+        var mobileno = document.forms["google-sheet"]["mobileno"].value;
+        var location = document.forms["google-sheet"]["location"].value;
+      
+        if (name == "" || email == "" || mobileno == "" || location == "") {
+          alert("All fields must be filled out.");
+          return false;
+        }
+
+        if (name.length < 3) {
+          alert("Name must be at least 3 characters long.");
+          return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+          alert("Invalid email address.");
+          return false;
+        }
+
+        if (mobileno.length >10 || mobileno.length <10) {
+          alert("Mobile number must be 10 characters long.");
+          return false;
+        }
+
+        if (location == "") {
+          alert("Location must be filled out.");
+          return false;
+        }
+
+        return true;
+      }
+      </script>
+      <script>
+         function resetForm() {
+           document.getElementById("google-sheet").reset();
+         }
+         </script>
+   </section>
+
+</body>
+</html>

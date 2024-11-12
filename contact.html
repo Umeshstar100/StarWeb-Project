@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWeb</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="css/style.css">
+  
+    <link rel="stylesheet" href="css/responsive.css">
+   
+</head>
+<body>
+    <header>
+        
+        <div class="header">
+           <div class="header_white_section">
+              <div class="container-fluid">
+                 <div class="row">
+                    <div class="col-md-12">
+                       <div class="header_information">
+                          <ul>
+                             <li><img src="images/1.png" alt="#"/> Mathura, Uttar Pradesh</li>
+                             <li><img src="images/2.png" alt="#"/> +91 9845642312  </li>
+                             <li><img src="images/3.png" alt="#"/> StarWeb100@gmail.com</li>
+                          </ul>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+           <div class="container">
+              <div class="row">
+                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                    <div class="full">
+                       <div class="center-desk">
+                          <div class="logo"> <a href="index.html"><img src="images/logo1.png" alt="#"></a> </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                    <div class="menu-area">
+                       <div class="limit-box">
+                          <nav class="main-menu">
+                             <ul class="menu-area-main">
+                                <li class="active"> <a href="index.html">Home</a> </li>
+                                <li> <a href="about.html">About</a> </li>
+                                <li><a href="course.html">Courses</a></li>
+                               
+                                <li><a href="contact.html">Contact Us</a></li>
+                             </ul>
+                          </nav>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+       
+     </header>
+    <div class="cont">
+       <h2>Get in touch</h2>
+        <p>If you have any questions or need assistance, feel free to contact us about workshop Registration.</p>
+        <br>
+        <br>
+        <form action="submit_form.php" method="POST" name="google-sheet1">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label  for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button name="submit" type="submit">Submit</button>
+        </form>
+    </div>
+     <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxx1vcZ82u2p4BQoTOwx6d9Of768R6GrlOBee4AIisAlCimrfaC84--oTMcVccTfZLM/exec'
+      const form = document.forms['google-sheet1']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+</body>
+</html>
